@@ -1,6 +1,11 @@
 #!/usr/bin/python3
+"""
+script for the function def
+"""
+
 
 def pascal_triangle(n):
+    "function to implement the pascal triangle"
     if (n <= 0):
         return ([])
 
