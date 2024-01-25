@@ -19,7 +19,7 @@ try:
             line = line.strip()
             deets = line.split('"')[2]
             deets = deets.strip()
-            status_code = deets.split()[0]
+            status_code = int(deets.split()[0])
             file_size = int(deets.split()[1])
 
             status_codes.append(status_code)
