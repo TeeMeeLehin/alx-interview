@@ -4,8 +4,9 @@ import sys
 from collections import Counter
 
 pattern = re.compile(
-    r'^(\d+\.\d+\.\d+\.\d+) - \[(.+)\] "GET /projects/260 HTTP/1.1" (\d+) (\d+)$')
-
+    r'^(\d+\.\d+\.\d+\.\d+) - \[(.+)\] "GET /projects/260 HTTP/1.1" '
+    r'(\d+) (\d+)$'
+)
 count = 0
 total_fs = 0
 status_codes = []
