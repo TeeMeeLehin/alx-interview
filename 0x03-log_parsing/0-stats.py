@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""log parsing script"""
 import re
 import sys
 from collections import Counter
