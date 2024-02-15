@@ -12,14 +12,14 @@ request(url, (err, response) => {
   } else if (response.statusCode === 200) {
     const charctrs = JSON.parse(response.body).characters;
     charctrs.forEach(charctr => {
-      request(charctr, (err, response) => {
+      request(charctr, (err, res) => {
         if (err) {
           console.log(err);
-        } else if (response.statusCode === 200) {
-          const name = JSON.parse(response.body).name;
+        } else if (res.statusCode === 200) {
+          const name = JSON.parse(res.body).name;
           console.log(name);
         } else {
-          console.log(response.statusCode);
+          console.log(res.statusCode);
         }
       });
     });
