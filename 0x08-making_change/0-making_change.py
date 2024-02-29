@@ -2,20 +2,16 @@
 """script to solve the coins-change problem"""
 
 
-def makeChange(coins, total):
-    """func def"""
-    if total <= 0:
+def makeChange(coins, amount):
+    if amount == 0:
         return 0
+    amounts = [float("inf")] * (amount + 1)
+    amounts[0] = 0
 
-    table = [total + 1] * (total + 1)
-
-    table[0] = 0
-    for i in range(1, len(table)):
-        for coin in coins:
-            if i >= coin:
-                table[i] = min(table[i], table[i - coin] + 1)
-
-    if table[total] != total + 1:
-        return table[total]
+    for coin in coins:
+        for i in range(coin, amount + 1):
+            amounts[i] = min(amounts[i], amounts[i - coin] + 1)
+    if amounts[amount] != float("inf"):
+        return amounts[amount]
     else:
         return -1
